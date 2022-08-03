@@ -1,7 +1,10 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
 
 public class Doctor extends Usuario {
 
@@ -28,11 +31,12 @@ public class Doctor extends Usuario {
 
 
         // primer sout
-        System.out.println("El nombre del doctor es: " + nombre );
+        //System.out.println("El nombre del doctor es: " + nombre );
     }
 
     ArrayList<CitasDisponibles> citasDisponibles = new ArrayList<>();
      public void todasCitasDisponibles (String fecha, String tiempo){
+
          citasDisponibles.add(new CitasDisponibles(fecha,tiempo));
              }
 
@@ -56,18 +60,20 @@ public class Doctor extends Usuario {
     //se crea una segunda clase Citas disponibles dentro de la clase doctor
     public static class CitasDisponibles {
          private int id;
-         private String fecha;
+         private Date fecha;
          private String hora;
+         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+
 
          //metodo constructor de citas disponibles
         public CitasDisponibles(String fecha, String hora) {
-            this.fecha=fecha;
+            try{
+            this.fecha = formato.parse(fecha);
+        } catch (ParseException e) {
+                e.printStackTrace();
+            }
             this.hora=hora;
         }
-
-
-
-
         //set, get de citas disponibles
         public int getId() {
             return id;
@@ -77,11 +83,15 @@ public class Doctor extends Usuario {
             this.id = id;
         }
 
-        public String getFecha() {
+        public Date getFecha(String FECHA) {
             return fecha;
         }
 
-        public void setFecha(String fecha) {
+        public String getFecha() {
+            return formato.format(fecha);
+        }
+
+        public void setFecha(Date fecha) {
             this.fecha = fecha;
         }
 

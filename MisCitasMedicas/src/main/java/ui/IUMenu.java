@@ -66,7 +66,7 @@ public class IUMenu {
         //se define una variable boolean que se inicializa en falso hata que el correo sea verdadero
         boolean emailCorrecto = false;
         do {
-            System.out.println("Inserte su email");
+            System.out.println("Inserte su email: [a...@gmail.com]");
             Scanner sc = new Scanner(System.in); //para leer lo que ponga el usuario
             String email = sc.nextLine(); //se registra lo del usuario
             if (tipoUsuario == 1) {
@@ -77,10 +77,9 @@ public class IUMenu {
                         //obtener el usuario logeado
                         doctorlogeado = d;
                         //Mostrar el menu del doctor
+                        IUMenuDoctor.mostrarMenuDoctor();
                     }
-
                 }
-
             }
             if (tipoUsuario == 2) {
                 for (Paciente p : pacientes) {
@@ -89,14 +88,11 @@ public class IUMenu {
                         //obtener el usuario logeado
                         pacientelogeado = p;
                         //Mostrar el menu del paciente
-
                     }
                 }
-
             }
         }while (!emailCorrecto) ;
     }
-
         static void mostraMenuPaciente () {
             int response = 0;
             do {
@@ -112,9 +108,8 @@ public class IUMenu {
                 switch (response) {
                     case 1:
                         System.out.println("::Reservar una cita");
-                        for (int i = 0; i < 3; i++) {
+                        for (int i = 0; i < 4; i++) {
                             System.out.println(i + ". " + MESES[i]);
-
                         }
                         break;
                     case 2:

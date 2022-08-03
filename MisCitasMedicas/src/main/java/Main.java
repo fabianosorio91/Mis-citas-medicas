@@ -10,15 +10,26 @@ public class Main {
     public static void main(String[] args) {
 
         //metodo para llamar al menu
-        //verMenu();
+        verMenu();
+    }
+}
 
+
+
+
+
+
+
+
+
+        /*
         Doctor miDoctor = new Doctor("Doctor Juan", "Drjuan@gmail.com", "cll 25 - 25", "doc123", "Medico General");
         System.out.println(miDoctor);
 
         //el metodo miDoctor trae los metodos de la clase Doctor
-        miDoctor.todasCitasDisponibles ("13 febrero", "4:00pm");
-        miDoctor.todasCitasDisponibles("15 marzo", "10:00pm");
-        miDoctor.todasCitasDisponibles("1 diciembre", "8:00am");
+        miDoctor.todasCitasDisponibles ("13/02/2022", "4:00pm");
+        miDoctor.todasCitasDisponibles("14/02/2022", "10:00pm");
+        miDoctor.todasCitasDisponibles("15/02/2022", "8:00am");
 
         //se crea para mostrar que es un metodo abstrato
         Usuario usuarioDoctor = new Doctor("Fabian Nuevo Doctor", "fabian@gmail.com", "cll 56-65", "Usu123", "Ser Usuario");
@@ -44,7 +55,7 @@ public class Main {
         }
 
 
-         */
+
 
 
         for (Doctor.CitasDisponibles citasDisponibles : miDoctor.getCitasDisponibles()) {
@@ -59,7 +70,7 @@ public class Main {
 
 
     }
-}
+}*/
 
 
 
